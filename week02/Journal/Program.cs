@@ -5,7 +5,6 @@
 // beyond the required minimum to give more variety.
 
 using System;
-
 class Program
 {
     static void Main(string[] args)
@@ -15,16 +14,20 @@ class Program
 
         bool running = true;
 
+        Console.WriteLine("");
+        Console.WriteLine("¡Welcome to your Daily Journal!");
+
         while (running)
         {
             Console.WriteLine();
-            Console.WriteLine("1. Write a new entry");
+            Console.WriteLine("1. Write an entry to answer a question");
             Console.WriteLine("2. Display the journal");
             Console.WriteLine("3. Save the journal to a file");
             Console.WriteLine("4. Load the journal from a file");
             Console.WriteLine("5. Clear the journal");
             Console.WriteLine("6. Quit");
-            Console.Write("Select an option: ");
+            Console.WriteLine("");
+            Console.Write("Please select an option: ");
 
             string choice = Console.ReadLine();
 
@@ -61,7 +64,7 @@ class Program
             else if (choice == "5")
             {
                 journal.Clear();
-                Console.WriteLine("Journal cleared.");
+                Console.WriteLine("Journal cleared succesfully.");
             }
             else if (choice == "6")
             {
