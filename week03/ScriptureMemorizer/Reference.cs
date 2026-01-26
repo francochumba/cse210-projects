@@ -1,28 +1,32 @@
 using System;
-using System.IO;
-
 public class Reference
 {
-    public void Reader()
+    public string Book { get; private set; }
+    public int Chapter { get; private set; }
+    public int VerseStart { get; private set; }
+    public int? VerseEnd { get; private set; }
+
+    public Reference(string book, int chapter, int verse)
     {
-        string[] lines = File.ReadAllLines("doctrinal_mastery.txt");
+        Book = book;
+        Chapter = chapter;
+        VerseStart = verse;
+        VerseEnd = null;
+    }
 
-        foreach (string line in lines)
-        {
-            if (string.IsNullOrWhiteSpace(line))
-                continue;
+    public Reference(string book, int chapter, int verseStart, int verseEnd)
+    {
+        Book = book;
+        Chapter = chapter;
+        VerseStart = verseStart;
+        VerseEnd = verseEnd;
+    }
 
-            if (!line.Contains("|"))
-            {
-                Console.WriteLine("Section: " + line);
-                continue;
-            }
-
-            string[] parts = line.Split(new char[] { "|" }, 2);
-            string reference = parts[0];
-            string text = parts[1];
-
-            Console.WriteLine(reference + " -> " + text);
-        }
+    public override string ToString()
+    {
+        if (VerseEnd == null)
+            return $"{Book} {Chapter}:{VerseStart}";
+        else
+            return $"{Book} {Chapter}:{VerseStart}-{VerseEnd}";
     }
 }
