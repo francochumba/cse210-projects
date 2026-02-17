@@ -1,9 +1,24 @@
 using System;
 
+abstract class Animal
+{
+    public abstract void MakeSound();
+}
+
+class Dog : Animal
+{
+    public override void MakeSound()
+    {
+        Console.WriteLine("Dog barks");
+    }
+}
+
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        Console.WriteLine("Hello World! This is the Sandbox Project. My name is Franco Chumba");
+        Animal myDog = new Dog();
+
+        myDog.MakeSound();
     }
 }
