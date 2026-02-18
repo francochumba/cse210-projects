@@ -1,7 +1,6 @@
 /*
 Exceeding Requirements:
-I added a small improvement so activities can customize the name shown in the summary,
-for example Swimming shows "Lap Swimming".
+I added a small improvement, the "Lap Swimming" so that the activities can customize the name shown in the summary,
 */
 
 using System;
