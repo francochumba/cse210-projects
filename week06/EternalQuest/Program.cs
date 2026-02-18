@@ -3,7 +3,6 @@
 next to the score (e.g., Beginner, Adventurer, Champion, Legend).*/
 
 using System;
-
 class Program
 {
     static void Main(string[] args)
